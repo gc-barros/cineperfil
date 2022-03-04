@@ -1,0 +1,32 @@
+/* container, logo, botoes */
+@import "styles/variaveis";
+@import "styles/breakpoints";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90vw;
+  margin: auto;
+
+  @media screen and (max-width: $mobile) {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.botoes {
+  display: flex;
+
+  & button:first-of-type {
+    margin-right: 40px;
+  }
+
+  @media screen and (max-width: $mobile) {
+    margin-top: 40px;
+  }
+}

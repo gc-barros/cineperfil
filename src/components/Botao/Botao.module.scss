@@ -1,4 +1,59 @@
+@import "styles/variaveis";
+@import "styles/breakpoints";
+
 .botao {
-  background-color: red;
-  color: wheat;
+  background-color: $accent;
+  border: 1px solid $accent;
+  color: $light;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: .3s ease all;
+  font-weight: 600;
+  width: 100%;
+  white-space: nowrap;
+  height: 45px;
+  font-size: 20px;
+
+  &:hover {
+    background-color: $accent-light;
+  }
+
+  &__primario {
+    background-color: $dark-2;
+    border-color: $dark-2;
+
+    &:hover {
+      background-color: $dark-1;
+      border-color: $dark-1;
+    }
+  }
+
+  &__secundario {
+    background-color: transparent;
+    border-color: $light;
+
+    &:hover {
+      color: $accent-light;
+      border-color: $accent-light;
+      background-color: transparent;
+    }
+
+  }
+
+  &__ghost {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+
+    &:hover {
+      background-color: transparent;
+      color: $accent-light;
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    font-size: 16px;
+  }
+  
 }

@@ -1,5 +1,10 @@
+import CabecalhoInicial from "components/CabecalhoInicial";
+
 export default function Login() {
-  return(
-    <h1>Home</h1>
-  )
+  return (
+    <main>
+      <CabecalhoInicial />
+      <h1>Login</h1>
+    </main>
+  );
 }

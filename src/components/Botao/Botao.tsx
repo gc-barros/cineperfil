@@ -1,7 +1,17 @@
 import styles from "./Botao.module.scss";
+import classNames from 'classnames';
 
-export default function Botao() {
+interface Props {
+  children: string;
+  tipo?: "primario" | "secundario" | "ghost";
+  onClick?: () => void;
+}
+
+export default function Botao({children, tipo, onClick}: Props) {
   return (
-    <button className={styles.botao}>Clique aqui</button>
+    <button onClick={onClick} className={classNames({
+      [styles.botao]: true,
+      [styles[`botao__${tipo}`]]: Boolean(tipo),
+    })}>{children}</button>
   )
 }

@@ -1,5 +1,10 @@
+import CabecalhoInicial from "components/CabecalhoInicial";
+
 export default function Cadastro() {
-  return(
-    <h1>Cadastro</h1>
-  )
+  return (
+    <main>
+      <CabecalhoInicial />
+      <h1>Cadastro</h1>
+    </main>
+  );
 }
