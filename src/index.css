@@ -363,4 +363,10 @@ template {
 body{
     font-size: 100%;
     list-style-type: none;
+    background-color: #1F171A;
+    color: #F9F9F9;
+}
+
+main {
+  padding: 40px 24px;
 }
