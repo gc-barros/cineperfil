@@ -363,10 +363,33 @@ template {
 body{
     font-size: 100%;
     list-style-type: none;
-    background-color: #1F171A;
     color: #F9F9F9;
+    background: #1F171A url(assets/img/luzes.png) no-repeat center / cover;
 }
 
 main {
-  padding: 40px 24px;
+  padding: 40px 24px 0 24px;
+  overflow-x: hidden;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #D92671;
+  border-radius: 8px;
+  transition: .4s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #F43E89;
 }

@@ -1,0 +1,21 @@
+/* container, logo, botoes */
+@import "styles/variaveis";
+@import "styles/breakpoints";
+
+.footer {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  color: #ABABAB;
+  text-align: center;
+  padding-bottom: 16px;
+
+  @media screen and (max-width: $tablet) {
+    font-size: 14px;
+  }
+}
+
+.footer > strong {
+  color: $accent;
+  font-weight: bold;
+}

@@ -1,0 +1,66 @@
+@import 'styles/breakpoints.scss';
+@import 'styles/variaveis.scss';
+
+.container {
+  display: flex;
+  width: 90vw;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px auto;
+
+  @media screen and (max-width: $tablet) {
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 72px;
+  }
+}
+
+.imagem {
+  padding-left: 40px;
+  text-align: center;
+
+  & img {
+    width: 100%;
+    max-width: 400px;
+    filter: drop-shadow(1px 1px 40px $accent);
+  }
+
+  @media screen and (max-width: $tablet) {
+    margin-top: 64px;
+    padding: 0;
+    width: 60vw;
+  }
+}
+
+.article {
+  max-width: 560px;
+  font-size: 16px;
+
+  & > button {
+    max-width: 260px;
+  }
+
+  @media screen and (max-width: $mobile) {
+    font-size: 12px;
+  }
+}
+
+.titulo {
+  font-weight: bold;
+  font-size: 2.5em;
+  line-height: 140%;
+  margin: 0;
+
+  & span {
+    color: $accent-light;
+  }
+}
+
+.descricao {
+  font-weight: 500;
+  font-size: 1.5em;
+  line-height: 140%;
+  color: #D7D7D7;
+  margin-top: 24px;
+  margin-bottom: 40px;
+}
