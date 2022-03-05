@@ -1,4 +1,3 @@
-import Botao from "components/Botao";
 import CabecalhoInterno from "components/CabecalhoInterno";
 import ExibirPerfil from "components/ExibirPerfil";
 import Input from "components/Input";
