@@ -13,7 +13,7 @@ export default function Cadastro() {
   const [senhaConfirmacao, setSenhaConfirmacao] = useState("");
 
   return (
-    <section className={styles.principal}>
+    <main className={styles.principal}>
       <CabecalhoInicial />
       <section className={styles.container}>
         <form
@@ -62,6 +62,6 @@ export default function Cadastro() {
         </form>
       </section>
       <Rodape />
-    </section>
+    </main>
   );
 }

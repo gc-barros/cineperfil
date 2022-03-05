@@ -197,7 +197,7 @@ body{
     background: #1F171A url(assets/img/luzes.png) no-repeat center / cover;
 }
 
-main {
+.main {
   padding: 40px 24px 0 24px;
   overflow-x: hidden;
   position: relative;
@@ -205,7 +205,7 @@ main {
 }
 
 @media screen and (max-width: 1023px) {
-  main {
+  .main {
     height: auto;
     padding-bottom: 80px;
   }

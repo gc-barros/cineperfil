@@ -9,7 +9,7 @@ export default function NoMatch() {
   let navigate = useNavigate();
 
   return (
-    <section className={styles.principal}>
+    <main className={styles.principal}>
       <CabecalhoInicial />
       <div className={styles.container}>
         <div className={styles.imagem}><img src={pipoca404} alt="Pipoca derramada" /></div>
@@ -17,6 +17,6 @@ export default function NoMatch() {
         <Botao onClick={() => navigate('/')}>Voltar ao início</Botao>
       </div>
       <Rodape />
-    </section>
+    </main>
   );
 }

@@ -1,0 +1,61 @@
+@import 'styles/_variaveis.scss';
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 56px;
+
+  & > .fieldset {
+    display: flex;
+    border: none;
+    align-items: center;
+  }
+
+  & > .fieldset:first-of-type {
+    margin-right: 40px;
+    position: relative;
+
+    &::after {
+      content: '';
+      height: 16px;
+      width: 16px;
+      display: block;
+      position: absolute;
+      right: 16px;
+      background: $dark-1 url(../../assets/img/lupa.svg) no-repeat center / contain;
+      pointer-events: none;
+    }
+  }
+
+  & select {
+    display: block;
+    height: 45px;
+    background: $dark-1;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 0 16px;
+    color: $light;
+    font-size: 16px;
+    outline: none;
+    margin-left: 16px;
+    transform: translateY(-1px);
+    font-weight: 600;
+    cursor: pointer;
+  }
+}
+
+.botaoAdd {
+  transform: translateY(-1px);
+  margin-left: 16px;
+  display: block;
+  height: 45px;
+  width: 45px;
+  background: $accent;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  color: $light;
+  font-size: 32px;
+  font-weight: 500;
+  cursor: pointer;
+}

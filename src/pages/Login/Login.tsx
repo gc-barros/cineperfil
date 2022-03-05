@@ -4,22 +4,25 @@ import styles from "./Login.module.scss";
 import Cinegirl from "assets/img/cinegirl.png";
 import Rodape from "components/Rodape";
 import Input from "components/Input";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
+  let navigate = useNavigate();
+
   return (
-    <main>
+    <main className="main">
       <CabecalhoInicial />
       <section className={styles.container}>
         <form
           className={styles.form}
           onSubmit={(e) => {
             e.preventDefault();
-            console.log(`E-mail: ${email}. Senha: ${senha}`)
+            console.log(`E-mail: ${email}. Senha: ${senha}`);
+            navigate("/midias");
           }}
         >
           <p className={styles.subtitulo}>Bem-vindo de volta, cinéfilo!</p>

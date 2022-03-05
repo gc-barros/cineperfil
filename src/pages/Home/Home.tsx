@@ -10,7 +10,7 @@ export default function Home() {
   let navigate = useNavigate();
 
   return (
-    <main>
+    <main className='main'>
       <CabecalhoInicial />
       <section className={styles.container}>
         <article className={styles.article}>

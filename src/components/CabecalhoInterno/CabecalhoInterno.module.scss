@@ -1,0 +1,80 @@
+/* container, logo, botoes */
+@import "styles/variaveis";
+@import "styles/breakpoints";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90vw;
+  margin: auto;
+
+  @media screen and (max-width: $mobile) {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.botoes {
+  display: flex;
+
+  @media screen and (max-width: $mobile) {
+    margin-top: 40px;
+  }
+}
+
+.botaoPerfil {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  color: $light;
+  font-weight: 600;
+  font-size: 20px;
+  cursor: pointer;
+  margin-right: 80px;
+  
+  @media screen and (max-width: $mobile) {
+    margin-right: 40px;
+    font-size: 18px;
+  }
+
+  & > img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 12px;
+    border: 2px solid $accent;
+    box-sizing: content-box;
+  }
+}
+
+.botaoSair {
+  background-color: transparent;
+  border: none;
+  font-weight: 600;
+  font-size: 20px;
+  color: $accent;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: .4s ease all;
+
+  @media screen and (max-width: $mobile) {
+    font-size: 18px;
+  }
+
+  &:hover {
+    color: $accent-light;
+  }
+
+  & > svg {
+    margin-right: 12px;
+  }
+}
