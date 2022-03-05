@@ -1,7 +1,6 @@
 import styles from "./CabecalhoInterno.module.scss";
 import logo from "assets/img/logo.svg";
 import { useNavigate } from "react-router-dom";
-import dogcinema from "assets/img/dogcinema.jpg";
 import profilepic from "assets/img/profilepic.svg";
 import { ReactComponent as IconeSair } from "assets/img/iconsair.svg";
 

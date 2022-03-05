@@ -15,7 +15,7 @@ export default function Midias() {
           <Input label="Buscar categoria" />
         </div>
         <div className={styles.adicionar}>
-          <Input label="Criar nova categoria" />
+          <Input label="Adicionar nova categoria" />
           <select>
             <option value="filmes" selected>
               Filmes
