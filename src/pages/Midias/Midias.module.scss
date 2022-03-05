@@ -1,4 +1,5 @@
-@import 'styles/_variaveis.scss';
+@import 'styles/variaveis.scss';
+@import 'styles/breakpoints.scss';
 
 .form {
   display: flex;
@@ -6,26 +7,19 @@
   align-items: center;
   margin-top: 56px;
 
-  & > .fieldset {
-    display: flex;
-    border: none;
-    align-items: center;
+  @media screen and (max-width: $mobile) {
+    flex-direction: column;
   }
+}
 
-  & > .fieldset:first-of-type {
-    margin-right: 40px;
-    position: relative;
+.adicionar {
+  display: flex;
+  border: none;
+  align-items: center;
+  justify-content: center;
 
-    &::after {
-      content: '';
-      height: 16px;
-      width: 16px;
-      display: block;
-      position: absolute;
-      right: 16px;
-      background: $dark-1 url(../../assets/img/lupa.svg) no-repeat center / contain;
-      pointer-events: none;
-    }
+  @media screen and (max-width: $mobile) {
+    flex-direction: column;
   }
 
   & select {
@@ -42,6 +36,12 @@
     transform: translateY(-1px);
     font-weight: 600;
     cursor: pointer;
+
+    @media screen and (max-width: $mobile) {
+      width: 100%;
+      margin-left: 0;
+      margin-top: -8px;
+    }
   }
 }
 
@@ -58,4 +58,31 @@
   font-size: 32px;
   font-weight: 500;
   cursor: pointer;
+
+  @media screen and (max-width: $mobile) {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 24px;
+  }
 }
+
+.buscar {
+    margin-right: 40px;
+    position: relative;
+
+    @media screen and (max-width: $mobile) {
+      margin-right: 0;
+    }
+
+    &::after {
+      content: '';
+      height: 16px;
+      width: 16px;
+      display: block;
+      position: absolute;
+      right: 16px;
+      top: 45px;
+      background: $dark-1 url(../../assets/img/lupa.svg) no-repeat center / contain;
+      pointer-events: none;
+    }
+  }

@@ -10,10 +10,10 @@ export default function Midias() {
       <CabecalhoInterno />
       <ExibirPerfil />
       <div className={styles.form}>
-        <div className={styles.fieldset}>
+        <div className={styles.buscar}>
           <Input label="Buscar categoria" />
         </div>
-        <div className={styles.fieldset}>
+        <div className={styles.adicionar}>
           <Input label="Criar nova categoria" />
           <select>
             <option value="filmes" selected>
