@@ -1,0 +1,88 @@
+@import 'styles/breakpoints.scss';
+@import 'styles/variaveis.scss';
+
+.principal {
+  position: relative;
+  height: 140vh;
+  padding: 40px 24px 0 24px;
+
+  @media screen and (max-width: $tablet) {
+    height: auto;
+    padding-bottom: 80px;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 88px auto;
+
+  @media screen and (max-width: $tablet) {
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 72px;
+  }
+}
+
+.imagem {
+  padding-left: 40px;
+  text-align: center;
+
+  & img {
+    width: 100%;
+    max-width: 400px;
+    filter: drop-shadow(1px 1px 40px $accent);
+  }
+
+  @media screen and (max-width: $tablet) {
+    margin-top: 64px;
+    padding: 0;
+    width: 60vw;
+  }
+}
+
+.form {
+  width: 380px;
+  font-size: 16px;
+
+  @media screen and (max-width: $mobile) {
+    font-size: 12px;
+    width: 90%;
+  }
+}
+
+.titulo {
+  font-weight: 600;
+  font-size: 2em;
+  line-height: 140%;
+  margin: 0;
+  margin-bottom: 32px;
+
+  & span {
+    color: $accent-light;
+  }
+}
+
+.subtitulo {
+  font-weight: bold;
+  font-size: 1.25em;
+  line-height: 22px;
+  color: $accent-light;
+  margin-bottom: 8px;
+}
+
+.criarConta {
+  display: block;
+  margin-top: 24px;
+  font-size: 1em;
+  line-height: 22px;
+  text-align: center;
+  color: #FFFFFF;
+
+  & > a {
+    color: $accent-light;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}
