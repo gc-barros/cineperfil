@@ -1,0 +1,39 @@
+@import 'styles/breakpoints.scss';
+@import 'styles/variaveis.scss';
+
+.principal {
+  position: relative;
+  height: 100vh;
+  padding: 40px 24px;
+
+  @media screen and (max-width: $tablet) {
+    padding-bottom: 80px;
+  }
+}
+
+.container {
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+
+  & > button {
+    max-width: 240px;
+  }
+}
+
+.titulo {
+  font-size: 28px;
+}
+
+.imagem {
+  max-width: 400px;
+  margin-top: -80px;
+
+  & > img {
+    width: 100%;
+  }
+
+  @media screen and (max-width: $tablet) {
+    margin-top: 0px;
+  }
+}

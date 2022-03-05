@@ -45,10 +45,33 @@
 .form {
   width: 380px;
   font-size: 16px;
+  position: relative;
+
+  &::before {
+    content: '';
+    height: 200px;
+    width: 200px;
+    display: block;
+    position: absolute;
+    top: -90px;
+    right: -50px;
+    background: url(../../assets/img/itenscinema.png) no-repeat center / cover;
+  }
 
   @media screen and (max-width: $mobile) {
     font-size: 12px;
     width: 90%;
+  }
+
+  @media screen and (max-width: 420px) {
+      padding-top: 160px;
+
+      &::before {
+        top: -50px;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+      }
   }
 }
 

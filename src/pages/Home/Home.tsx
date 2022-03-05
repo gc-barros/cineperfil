@@ -3,8 +3,12 @@ import CabecalhoInicial from 'components/CabecalhoInicial';
 import Cineboy from 'assets/img/cineboy.png';
 import styles from './Home.module.scss';
 import Rodape from 'components/Rodape';
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+
+  let navigate = useNavigate();
+
   return (
     <main>
       <CabecalhoInicial />
@@ -17,7 +21,7 @@ export default function Home() {
             Crie o seu próprio perfil, gerencie seus filmes, séries e animes
             favoritos, expresse sua opinião e, acima de tudo, divirta-se!
           </p>
-          <Botao>Começar agora</Botao>
+          <Botao onClick={() => navigate("/login")}>Começar agora</Botao>
         </article>
         <div className={styles.imagem}>
           <img

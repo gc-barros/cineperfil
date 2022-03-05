@@ -21,10 +21,7 @@
   padding: 16px 16px;
   color: $light;
   font-size: 16px;
-
-  &:focus {
-    outline-color: $accent;
-  }
+  outline: none;
 }
 
 .inputIcon {
