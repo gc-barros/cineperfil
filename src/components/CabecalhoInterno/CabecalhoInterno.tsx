@@ -2,6 +2,7 @@ import styles from "./CabecalhoInterno.module.scss";
 import logo from "assets/img/logo.svg";
 import { useNavigate } from "react-router-dom";
 import dogcinema from "assets/img/dogcinema.jpg";
+import profilepic from "assets/img/profilepic.svg";
 import { ReactComponent as IconeSair } from "assets/img/iconsair.svg";
 
 export default function CabecalhoInicial() {
@@ -17,7 +18,7 @@ export default function CabecalhoInicial() {
           className={styles.botaoPerfil}
           onClick={() => navigate("/perfil")}
         >
-          <img src={dogcinema} alt="Foto de perfil do usuário" />
+          <img src={profilepic} alt="Foto de perfil do usuário" />
           <span>Gabriel</span>
         </button>
         <button

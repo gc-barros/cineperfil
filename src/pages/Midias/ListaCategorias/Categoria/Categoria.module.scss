@@ -1,0 +1,100 @@
+@import "styles/variaveis.scss";
+@import "styles/breakpoints.scss";
+
+.container {
+  width: min-content;
+  min-width: 294px;
+  background: $dark-1;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-sizing: border-box;
+  border-radius: 7.75758px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.informacoes {
+  display: grid;
+  grid-template-columns: 80px auto 80px;
+  width: 100%;
+  align-items: center;
+}
+
+.nome {
+  font-weight: 600;
+  font-size: 20px;
+  padding: 0 24px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.badge {
+  padding: 6px 14px;
+  display: inline-block;
+  font-size: 16px;
+  color: $accent-light;
+  background-color: #D9267129;
+  border: 1px solid $accent-light;
+  border-radius: 40px;
+}
+
+.botaoNovaMidia, .botaoOpcoes {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.botaoOpcoes {
+  justify-self: flex-end;
+}
+
+.botaoNovaMidia {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-sizing: border-box;
+  border-radius: 8px;
+  height: 160px;
+  min-width: 108px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: .3s ease;
+  
+  svg path {
+    transition: .3s ease;
+  }
+  
+  &:hover {
+    border-color: $accent-light;
+    
+    svg path, span {
+      stroke: $accent-light;
+      color: $accent-light;
+    }
+  }
+  
+  span {
+    transition: .3s ease;
+    color: #F9F9F9;
+    font-size: 14px;
+    margin-top: 4px;
+    font-weight: 600;
+  }
+}
+
+.listaMidias {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  overflow-x: scroll;
+  width: 100%;
+  padding-bottom: 16px;
+
+  @media screen and (max-width: $tablet) {
+    justify-content: flex-start;
+  }
+}

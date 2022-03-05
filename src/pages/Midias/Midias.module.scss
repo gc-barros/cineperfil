@@ -1,6 +1,10 @@
 @import 'styles/variaveis.scss';
 @import 'styles/breakpoints.scss';
 
+.mainContainer {
+  padding: 40px 24px 80px 24px;
+}
+
 .form {
   display: flex;
   justify-content: center;
@@ -85,4 +89,10 @@
       background: $dark-1 url(../../assets/img/lupa.svg) no-repeat center / contain;
       pointer-events: none;
     }
+  }
+
+  .titulo {
+    margin-top: 40px;
+    text-align: center;
+    margin-bottom: 24px;
   }

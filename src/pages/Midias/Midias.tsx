@@ -1,14 +1,15 @@
 import CabecalhoInterno from "components/CabecalhoInterno";
 import ExibirPerfil from "components/ExibirPerfil";
 import Input from "components/Input";
-import Rodape from "components/Rodape";
+import ListaCategorias from "./ListaCategorias";
 import styles from "./Midias.module.scss";
 
 export default function Midias() {
   return (
-    <main className="main">
+    <main className={styles.mainContainer}>
       <CabecalhoInterno />
       <ExibirPerfil />
+
       <div className={styles.form}>
         <div className={styles.buscar}>
           <Input label="Buscar categoria" />
@@ -25,8 +26,11 @@ export default function Midias() {
           <button className={styles.botaoAdd}>+</button>
         </div>
       </div>
-      <h1>Midias</h1>
-      <Rodape />
+
+      <section className={styles.minhasMidias}>
+        <h2 className={styles.titulo}>🎬 Minhas mídias</h2>
+        <ListaCategorias />
+      </section>
     </main>
   );
 }

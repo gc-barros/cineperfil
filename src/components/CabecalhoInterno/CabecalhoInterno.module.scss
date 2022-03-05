@@ -51,7 +51,6 @@
     border-radius: 50%;
     object-fit: cover;
     margin-right: 12px;
-    border: 2px solid $accent;
     box-sizing: content-box;
   }
 }
@@ -66,9 +65,10 @@
   align-items: center;
   cursor: pointer;
   transition: .4s ease all;
-
+  
   @media screen and (max-width: $mobile) {
     font-size: 18px;
+    transform: translateY(-24px);
   }
 
   &:hover {
