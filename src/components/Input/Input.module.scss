@@ -6,6 +6,7 @@
   font-size: 18px;
   line-height: 22px;
   color: rgba(255, 255, 255, 0.8);
+  position: relative;
 }
 
 .input {
@@ -17,10 +18,19 @@
   border-radius: 4px;
   margin-top: 8px;
   margin-bottom: 32px;
-  padding: 16px 8px;
+  padding: 16px 16px;
   color: $light;
+  font-size: 16px;
 
   &:focus {
     outline-color: $accent;
   }
+}
+
+.inputIcon {
+  position: absolute;
+  right: 16px;
+  bottom: 4px;
+  cursor: pointer;
+  background: $dark-1;
 }

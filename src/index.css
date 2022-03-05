@@ -204,6 +204,13 @@ main {
   height: 115vh;
 }
 
+@media screen and (max-width: 1023px) {
+  main {
+    height: auto;
+    padding-bottom: 80px;
+  }
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
