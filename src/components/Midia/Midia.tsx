@@ -1,11 +1,16 @@
+import { IMidia } from 'types/midia';
 import styles from './Midia.module.scss';
 
-export default function Midia() {
+interface Props {
+  midia: IMidia;
+}
+
+export default function Midia({midia}: Props) {
   return (
     <div className={styles.container}>
       <img
-        src="https://upload.wikimedia.org/wikipedia/pt/thumb/0/00/Spider-Man_No_Way_Home_poster.jpg/250px-Spider-Man_No_Way_Home_poster.jpg"
-        alt="Capa"
+        src={midia.url}
+        alt={`Capa de ${midia.nome}`}
       />
     </div>
   );

@@ -3,11 +3,13 @@ import Rating from "@mui/material/Rating";
 import styles from "./AddMidiaModal.module.scss";
 import { useState, Dispatch, SetStateAction } from "react";
 import closeicon from "assets/img/closeicon.svg";
+import { IMidia } from 'types/midia';
 
 interface Props {
   fecharModal: Dispatch<SetStateAction<boolean>>;
+  adicionarMidia: (midia: IMidia) => void;
 }
-export default function Midia({fecharModal}:Props) {
+export default function Midia({fecharModal, adicionarMidia}:Props) {
   const [tipoMidia, setTipoMidia] = useState("Filmes");
   const [nomeMidia, setNomeMidia] = useState("");
   const [anoMidia, setAnoMidia] = useState("");
@@ -22,7 +24,7 @@ export default function Midia({fecharModal}:Props) {
         className={styles.container}
         onSubmit={(e) => {
           e.preventDefault();
-          console.log({
+          adicionarMidia({
             nome: nomeMidia,
             tipo: tipoMidia,
             temporadas: temporadasMidia,

@@ -7,6 +7,7 @@ import { memo, useState } from "react";
 import EditarCategoria from "pages/Midias/EditarCategoria";
 import Midia from "components/Midia";
 import AddMidiaModal from "components/AddMidiaModal";
+import { IMidia } from 'types/midia';
 
 interface Props {
   nome: string;
@@ -21,7 +22,7 @@ function Categoria({ nome, tipo, excluirCategoria, editarCategoria, id }: Props)
   const [showEditModal, setShowEditModal] = useState(false);
   const [showAddMidiaModal, setShowAddMidiaModal] = useState(false);
 
-  // const [listaMidias, setListaMidias] = useState([]);
+  const [listaMidias, setListaMidias] = useState<IMidia[]>([]);
 
   function handleShowOptions() {
     setShowOption(!showOptions);
@@ -29,6 +30,11 @@ function Categoria({ nome, tipo, excluirCategoria, editarCategoria, id }: Props)
 
   function handleShowEditModal() {
     setShowEditModal(!showEditModal);
+  }
+
+  function adicionarMidia(midia: IMidia) {
+    setListaMidias(listaAnterior => [...listaAnterior, midia]);
+    setShowAddMidiaModal(false);
   }
 
   return (
@@ -73,7 +79,11 @@ function Categoria({ nome, tipo, excluirCategoria, editarCategoria, id }: Props)
         )}
 
         <ul className={styles.listaMidias}>
-          <Midia />
+          {
+            listaMidias.map(midia => (
+              <Midia midia={midia} />
+            ))
+          }
           <button className={styles.botaoNovaMidia} onClick={() => setShowAddMidiaModal(true)}>
             <NovaMidiaIcon />
             <span>Nova mídia</span>
@@ -81,7 +91,7 @@ function Categoria({ nome, tipo, excluirCategoria, editarCategoria, id }: Props)
         </ul>
       </div>
 
-      {showAddMidiaModal && <AddMidiaModal fecharModal={setShowAddMidiaModal} />}
+      {showAddMidiaModal && <AddMidiaModal fecharModal={setShowAddMidiaModal} adicionarMidia={adicionarMidia} />}
     </>
   );
 }
