@@ -1,0 +1,94 @@
+@import "styles/breakpoints.scss"; 
+@import "styles/variaveis.scss"; 
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(17, 15, 15, 0.801);
+}
+
+.adicionar {
+  display: flex;
+  border: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $dark-2;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  position: relative;
+
+  & > label {
+    color: #FFF;
+  }
+
+  & select {
+    display: block;
+    height: 45px;
+    background: $dark-1;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 0 16px;
+    color: $light;
+    font-size: 16px;
+    outline: none;
+    margin-left: 16px;
+    transform: translateY(-1px);
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    margin-left: 0;
+    margin-top: -8px;
+   
+  }
+}
+
+.botaoAdd {
+  transform: translateY(-1px);
+  margin-left: 16px;
+  display: block;
+  height: 45px;
+  width: 45px;
+  background: $accent;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  color: $light;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: .4s ease;
+
+  &:hover {
+    background-color: $accent-light;
+  }
+
+  width: 100%;
+  margin-left: 0;
+  margin-top: 24px;
+}
+
+.botaoClose {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  cursor: pointer;
+
+  img {
+    height: 20px;
+    width: 20px;
+  }
+}

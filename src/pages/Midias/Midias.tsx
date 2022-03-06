@@ -6,6 +6,7 @@ import AddCategoria from "./AddCategoria";
 import ListaCategorias from "./ListaCategorias";
 import styles from "./Midias.module.scss";
 import { ICategoria } from "types/categoria";
+import { v4 as uuidv4 } from "uuid";
 
 export default function Midias() {
   const [listaDeCategorias, setListaDeCategorias] = useState<ICategoria[]>([]);
@@ -16,6 +17,7 @@ export default function Midias() {
     const novaCategoria = {
       nome: nome,
       tipo: tipo,
+      id: uuidv4()
     };
 
     const categoriaJaExiste = listaDeCategorias.find(
@@ -35,6 +37,18 @@ export default function Midias() {
     setListaDeCategorias((listaAnterior) =>
       listaAnterior.filter((categoria) => categoria.nome !== nome)
     );
+  }
+
+  function editarCategoria(nome: string, tipo: string, id: string) {
+    console.log(nome, tipo, id);
+    setListaDeCategorias(listaAnterior => listaAnterior.map(categoria => {
+      if (categoria.id === id) {
+        categoria.nome = nome;
+        categoria.tipo = tipo;
+      }
+
+      return categoria;
+    }))
   }
 
   useEffect(() => {
@@ -72,6 +86,7 @@ export default function Midias() {
         <ListaCategorias
           listaDeCategorias={listaFiltrada}
           excluirCategoria={excluirCategoria}
+          editarCategoria={editarCategoria}
         />
       </section>
     </main>
