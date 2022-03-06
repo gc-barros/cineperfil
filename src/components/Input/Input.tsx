@@ -7,14 +7,18 @@ interface Props {
   label: string;
   type?: string;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  onKeyPress?: React.KeyboardEventHandler<HTMLInputElement>;
   showIcon?: boolean;
+  value?: string;
 }
 
 export default function Input({
   label,
   type = "text",
   onChange,
+  onKeyPress,
   showIcon = false,
+  value
 }: Props) {
   
   const [senhaVisivel, setSenhaVisivel] = useState(false);
@@ -32,7 +36,9 @@ export default function Input({
         type={tipoSenha}
         className={styles.input}
         onChange={onChange}
+        onKeyPress={onKeyPress}
         required
+        value={value}
       />
       {showIcon && (
         <div className={styles.inputIcon}>

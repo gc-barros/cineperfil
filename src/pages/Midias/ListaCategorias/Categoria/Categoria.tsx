@@ -3,9 +3,14 @@ import { ReactComponent as OptionsIcon } from "assets/img/options.svg";
 import { ReactComponent as NovaMidiaIcon } from "assets/img/novamidia.svg";
 import { ReactComponent as EditIcon } from "assets/img/editicon.svg";
 import { ReactComponent as TrashIcon } from "assets/img/trashicon.svg";
-import { useState } from "react";
+import { memo, useState } from "react";
 
-export default function Categoria() {
+interface Props {
+  nome: string,
+  tipo: string
+}
+
+function Categoria({nome, tipo}:Props) {
   const [showOptions, setShowOption] = useState(false);
   
   function handleShowOptions() {
@@ -15,8 +20,8 @@ export default function Categoria() {
   return (
     <div className={styles.container}>
       <div className={styles.informacoes}>
-        <span className={styles.badge}>Filmes</span>
-        <h3 className={styles.nome}>Não gostei</h3>
+        <span className={styles.badge}>{tipo}</span>
+        <h3 className={styles.nome}>{nome}</h3>
         <button className={styles.botaoOpcoes} onClick={handleShowOptions}>
           <OptionsIcon />
         </button>
@@ -45,3 +50,5 @@ export default function Categoria() {
     </div>
   );
 }
+
+export default memo(Categoria);

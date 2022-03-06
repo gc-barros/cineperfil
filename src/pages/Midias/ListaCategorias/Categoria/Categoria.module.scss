@@ -22,13 +22,14 @@
   grid-template-columns: 1fr auto 1fr;
   width: 100%;
   align-items: center;
+  max-width: inherit;
 }
 
 .nome {
   font-weight: 600;
+  display: block;
   font-size: 20px;
   padding: 0 24px;
-  white-space: nowrap;
   text-align: center;
 }
 
