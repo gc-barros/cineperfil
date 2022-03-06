@@ -19,7 +19,7 @@ function Categoria({ nome, tipo, excluirCategoria, editarCategoria, id }: Props)
   const [showOptions, setShowOption] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
 
-  const [listaMidias, setListaMidias] = useState([]);
+  // const [listaMidias, setListaMidias] = useState([]);
 
   function handleShowOptions() {
     setShowOption(!showOptions);
