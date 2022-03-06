@@ -33,6 +33,7 @@ export default function Login() {
             onChange={(e) => {
               setEmail(e.target.value);
             }}
+            placeholder="exemplo@email.com"
           />
           <Input
             label="Senha"
@@ -41,6 +42,7 @@ export default function Login() {
             onChange={(e) => {
               setSenha(e.target.value);
             }}
+            placeholder="•••••••••"
           />
           <Botao>Entrar</Botao>
           <span className={styles.criarConta}>

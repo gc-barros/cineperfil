@@ -10,6 +10,7 @@ interface Props {
   onKeyPress?: React.KeyboardEventHandler<HTMLInputElement>;
   showIcon?: boolean;
   value?: string;
+  placeholder?: string;
 }
 
 export default function Input({
@@ -18,7 +19,8 @@ export default function Input({
   onChange,
   onKeyPress,
   showIcon = false,
-  value
+  value,
+  placeholder
 }: Props) {
   
   const [senhaVisivel, setSenhaVisivel] = useState(false);
@@ -39,6 +41,7 @@ export default function Input({
         onKeyPress={onKeyPress}
         required
         value={value}
+        placeholder={placeholder}
       />
       {showIcon && (
         <div className={styles.inputIcon}>

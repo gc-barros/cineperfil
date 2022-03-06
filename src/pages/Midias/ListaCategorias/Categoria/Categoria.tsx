@@ -6,6 +6,7 @@ import { ReactComponent as TrashIcon } from "assets/img/trashicon.svg";
 import { memo, useState } from "react";
 import EditarCategoria from "pages/Midias/EditarCategoria";
 import Midia from "components/Midia";
+import AddMidiaModal from "components/AddMidiaModal";
 
 interface Props {
   nome: string;
@@ -18,6 +19,7 @@ interface Props {
 function Categoria({ nome, tipo, excluirCategoria, editarCategoria, id }: Props) {
   const [showOptions, setShowOption] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
+  const [showAddMidiaModal, setShowAddMidiaModal] = useState(false);
 
   // const [listaMidias, setListaMidias] = useState([]);
 
@@ -72,12 +74,14 @@ function Categoria({ nome, tipo, excluirCategoria, editarCategoria, id }: Props)
 
         <ul className={styles.listaMidias}>
           <Midia />
-          <button className={styles.botaoNovaMidia}>
+          <button className={styles.botaoNovaMidia} onClick={() => setShowAddMidiaModal(true)}>
             <NovaMidiaIcon />
             <span>Nova mídia</span>
           </button>
         </ul>
       </div>
+
+      {showAddMidiaModal && <AddMidiaModal fecharModal={setShowAddMidiaModal} />}
     </>
   );
 }

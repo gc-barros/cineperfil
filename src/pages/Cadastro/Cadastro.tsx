@@ -20,7 +20,9 @@ export default function Cadastro() {
           className={styles.form}
           onSubmit={(e) => {
             e.preventDefault();
-            console.log(`Nome: ${nome}. E-mail: ${email}. Senha: ${senha}. Confirmação da senha: ${senhaConfirmacao}`);
+            console.log(
+              `Nome: ${nome}. E-mail: ${email}. Senha: ${senha}. Confirmação da senha: ${senhaConfirmacao}`
+            );
           }}
         >
           <p className={styles.subtitulo}>Rápido, fácil e gratuito!</p>
@@ -31,6 +33,7 @@ export default function Cadastro() {
             onChange={(e) => {
               setNome(e.target.value);
             }}
+            placeholder="Tony Stark"
           />
           <Input
             label="E-mail"
@@ -38,6 +41,7 @@ export default function Cadastro() {
             onChange={(e) => {
               setEmail(e.target.value);
             }}
+            placeholder="exemplo@email.com"
           />
           <Input
             label="Senha"
@@ -46,6 +50,7 @@ export default function Cadastro() {
             onChange={(e) => {
               setSenha(e.target.value);
             }}
+            placeholder="•••••••••••"
           />
           <Input
             label="Confirmar senha"
@@ -54,6 +59,7 @@ export default function Cadastro() {
             onChange={(e) => {
               setSenhaConfirmacao(e.target.value);
             }}
+            placeholder="•••••••••••"
           />
           <Botao>Criar conta</Botao>
           <span className={styles.criarConta}>
