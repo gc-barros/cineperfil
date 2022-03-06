@@ -7,10 +7,11 @@ import { memo, useState } from "react";
 
 interface Props {
   nome: string,
-  tipo: string
+  tipo: string,
+  excluirCategoria: (nome: string) => void;
 }
 
-function Categoria({nome, tipo}:Props) {
+function Categoria({nome, tipo, excluirCategoria}:Props) {
   const [showOptions, setShowOption] = useState(false);
   
   function handleShowOptions() {
@@ -33,7 +34,7 @@ function Categoria({nome, tipo}:Props) {
             <EditIcon />
             Editar
           </button>
-          <button className={styles.botaoExcluir}>
+          <button className={styles.botaoExcluir} onClick={() => excluirCategoria(nome)}>
             <TrashIcon />
             Excluir
           </button>

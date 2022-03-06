@@ -10,7 +10,7 @@ import { ICategoria } from "types/categoria";
 export default function Midias() {
   const [listaDeCategorias, setListaDeCategorias] = useState<ICategoria[]>([]);
 
-  async function criarNovaCategoria(nome: string, tipo: string) {
+  function criarNovaCategoria(nome: string, tipo: string) {
     const novaCategoria = {
       nome: nome,
       tipo: tipo,
@@ -29,6 +29,10 @@ export default function Midias() {
     setListaDeCategorias((listaAnterior) => [...listaAnterior, novaCategoria]);
   }
 
+  function excluirCategoria(nome: string) {
+    setListaDeCategorias(listaAnterior => listaAnterior.filter((categoria) => categoria.nome !== nome));
+  }
+
   return (
     <main className={styles.mainContainer}>
       <CabecalhoInterno />
@@ -44,7 +48,7 @@ export default function Midias() {
 
       <section className={styles.minhasMidias}>
         <h2 className={styles.titulo}>🎬 Minhas mídias</h2>
-        <ListaCategorias listaDeCategorias={listaDeCategorias} />
+        <ListaCategorias listaDeCategorias={listaDeCategorias} excluirCategoria={excluirCategoria} />
       </section>
     </main>
   );
