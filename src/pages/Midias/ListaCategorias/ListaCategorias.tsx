@@ -10,14 +10,15 @@ interface Props {
 export default function ListaCategorias({ listaDeCategorias, excluirCategoria }: Props) {
   return (
     <ul className={styles.lista}>
-      {listaDeCategorias.map((categoria) => (
-        <Categoria
-          nome={categoria.nome}
-          tipo={categoria.tipo}
-          key={categoria.nome}
-          excluirCategoria={excluirCategoria}
-        />
-      ))}
+      {listaDeCategorias.length === 0 ? "👻 Nenhuma categoria de mídias encontrada." :
+        listaDeCategorias.map((categoria) => (
+          <Categoria
+            nome={categoria.nome}
+            tipo={categoria.tipo}
+            key={categoria.nome}
+            excluirCategoria={excluirCategoria}
+          />
+        ))}
     </ul>
   );
 }
