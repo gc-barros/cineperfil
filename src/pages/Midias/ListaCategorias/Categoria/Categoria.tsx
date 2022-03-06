@@ -5,6 +5,7 @@ import { ReactComponent as EditIcon } from "assets/img/editicon.svg";
 import { ReactComponent as TrashIcon } from "assets/img/trashicon.svg";
 import { memo, useState } from "react";
 import EditarCategoria from "pages/Midias/EditarCategoria";
+import Midia from "components/Midia";
 
 interface Props {
   nome: string;
@@ -17,6 +18,8 @@ interface Props {
 function Categoria({ nome, tipo, excluirCategoria, editarCategoria, id }: Props) {
   const [showOptions, setShowOption] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
+
+  const [listaMidias, setListaMidias] = useState([]);
 
   function handleShowOptions() {
     setShowOption(!showOptions);
@@ -68,6 +71,7 @@ function Categoria({ nome, tipo, excluirCategoria, editarCategoria, id }: Props)
         )}
 
         <ul className={styles.listaMidias}>
+          <Midia />
           <button className={styles.botaoNovaMidia}>
             <NovaMidiaIcon />
             <span>Nova mídia</span>

@@ -1,0 +1,20 @@
+@import 'styles/_variaveis.scss';
+
+.container {
+  height: 160px;
+  width: 108px;
+  
+  img {
+    width: 100%;
+    height: inherit;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: .3s ease;
+    object-fit: cover;
+    
+    &:hover {
+      border-color: $accent;
+    }
+  }
+}
