@@ -4,6 +4,7 @@ import styles from "./AddMidiaModal.module.scss";
 import { useState, Dispatch, SetStateAction } from "react";
 import closeicon from "assets/img/closeicon.svg";
 import { IMidia } from 'types/midia';
+import { v4 as uuidv4 } from "uuid";
 
 interface Props {
   fecharModal: Dispatch<SetStateAction<boolean>>;
@@ -27,6 +28,7 @@ export default function Midia({fecharModal, adicionarMidia}:Props) {
         onSubmit={(e) => {
           e.preventDefault();
           adicionarMidia({
+            id: uuidv4(),
             nome: nomeMidia,
             tipo: tipoMidia,
             temporadas: temporadasMidia,

@@ -1,4 +1,5 @@
 export interface IMidia {
+  id: string;
   nome: string;
   tipo: string;
   temporadas: string;

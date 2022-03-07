@@ -5,9 +5,10 @@ import VisualizarMidia from "./VisualizarMidia";
 
 interface Props {
   midia: IMidia;
+  excluirMidia: (id: string) => void;
 }
 
-export default function Midia({ midia }: Props) {
+export default function Midia({ midia, excluirMidia }: Props) {
   const [showVisualizarMidia, setShowVisualizarMidia] = useState(false);
   return (
     <>
@@ -26,6 +27,7 @@ export default function Midia({ midia }: Props) {
         <VisualizarMidia
           midia={midia}
           setShowVisualizarMidia={setShowVisualizarMidia}
+          excluirMidia={excluirMidia}
         />
       )}
     </>

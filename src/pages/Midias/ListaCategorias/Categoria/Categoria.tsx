@@ -37,6 +37,10 @@ function Categoria({ nome, tipo, excluirCategoria, editarCategoria, id }: Props)
     setShowAddMidiaModal(false);
   }
 
+  function excluirMidia(id: string) {
+    setListaMidias(listaAnterior => listaAnterior.filter(midia => midia.id !== id));
+  }
+
   return (
     <>
       {showEditModal && (
@@ -79,19 +83,25 @@ function Categoria({ nome, tipo, excluirCategoria, editarCategoria, id }: Props)
         )}
 
         <ul className={styles.listaMidias}>
-          {
-            listaMidias.map(midia => (
-              <Midia midia={midia} />
-            ))
-          }
-          <button className={styles.botaoNovaMidia} onClick={() => setShowAddMidiaModal(true)}>
+          {listaMidias.map((midia) => (
+            <Midia midia={midia} excluirMidia={excluirMidia} />
+          ))}
+          <button
+            className={styles.botaoNovaMidia}
+            onClick={() => setShowAddMidiaModal(true)}
+          >
             <NovaMidiaIcon />
             <span>Nova mídia</span>
           </button>
         </ul>
       </div>
 
-      {showAddMidiaModal && <AddMidiaModal fecharModal={setShowAddMidiaModal} adicionarMidia={adicionarMidia} />}
+      {showAddMidiaModal && (
+        <AddMidiaModal
+          fecharModal={setShowAddMidiaModal}
+          adicionarMidia={adicionarMidia}
+        />
+      )}
     </>
   );
 }

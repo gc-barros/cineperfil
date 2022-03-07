@@ -7,9 +7,14 @@ import styles from "./VisualizarMidia.module.scss";
 interface Props {
   midia: IMidia;
   setShowVisualizarMidia: React.Dispatch<React.SetStateAction<boolean>>;
+  excluirMidia: (id: string) => void;
 }
 
-export default function VisualizarMidia({ midia, setShowVisualizarMidia }: Props) {
+export default function VisualizarMidia({
+  midia,
+  setShowVisualizarMidia,
+  excluirMidia
+}: Props) {
   return (
     <div className={styles.overlay}>
       <div className={styles.container}>
@@ -34,7 +39,7 @@ export default function VisualizarMidia({ midia, setShowVisualizarMidia }: Props
             <span>
               <strong>Ano:</strong> {midia.ano}
             </span>
-            {midia.tipo === "Série" && (
+            {midia.tipo === "Séries" && (
               <span>
                 <strong>Temporadas:</strong> {midia.temporadas}
               </span>
@@ -45,7 +50,10 @@ export default function VisualizarMidia({ midia, setShowVisualizarMidia }: Props
             <Rating value={midia.avaliacao} precision={0.5} readOnly />
             <div className={styles.botoes}>
               <Botao tipo="ghost">Editar</Botao>
-              <Botao tipo="secundario">Excluir</Botao>
+              <Botao tipo="secundario" onClick={() => {
+                excluirMidia(midia.id);
+                setShowVisualizarMidia(false);
+              }}>Excluir</Botao>
             </div>
           </div>
         </div>
