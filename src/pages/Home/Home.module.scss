@@ -6,7 +6,7 @@
   width: 90vw;
   justify-content: space-between;
   align-items: center;
-  margin: 40px auto;
+  margin: 40px auto 80px auto;
 
   @media screen and (max-width: $tablet) {
     flex-direction: column;

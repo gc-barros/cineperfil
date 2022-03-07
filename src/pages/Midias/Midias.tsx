@@ -7,6 +7,7 @@ import ListaCategorias from "./ListaCategorias";
 import styles from "./Midias.module.scss";
 import { ICategoria } from "types/categoria";
 import { v4 as uuidv4 } from "uuid";
+import Rodape from "components/Rodape";
 
 export default function Midias() {
   const [listaDeCategorias, setListaDeCategorias] = useState<ICategoria[]>([]);
@@ -66,29 +67,32 @@ export default function Midias() {
   }, [busca, listaDeCategorias]);
 
   return (
-    <main className={styles.mainContainer}>
-      <CabecalhoInterno />
-      <ExibirPerfil />
-
-      <div className={styles.form}>
-        <div className={styles.buscar}>
-          <Input
-            label="Buscar categoria"
-            onChange={(e) => setBusca(e.target.value)}
-          />
+    <>
+      <main className={styles.mainContainer}>
+        <CabecalhoInterno />
+        <ExibirPerfil />
+  
+        <div className={styles.form}>
+          <div className={styles.buscar}>
+            <Input
+              label="Buscar categoria"
+              onChange={(e) => setBusca(e.target.value)}
+            />
+          </div>
+  
+          <AddCategoria criarNovaCategoria={criarNovaCategoria} />
         </div>
-
-        <AddCategoria criarNovaCategoria={criarNovaCategoria} />
-      </div>
-
-      <section className={styles.minhasMidias}>
-        <h2 className={styles.titulo}>🎬 Minhas mídias</h2>
-        <ListaCategorias
-          listaDeCategorias={listaFiltrada}
-          excluirCategoria={excluirCategoria}
-          editarCategoria={editarCategoria}
-        />
-      </section>
-    </main>
+  
+        <section className={styles.minhasMidias}>
+          <h2 className={styles.titulo}>🎬 Minhas mídias</h2>
+          <ListaCategorias
+            listaDeCategorias={listaFiltrada}
+            excluirCategoria={excluirCategoria}
+            editarCategoria={editarCategoria}
+          />
+        </section>
+      </main>
+      <Rodape />
+    </>
   );
 }

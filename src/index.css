@@ -201,13 +201,12 @@ body{
   padding: 40px 24px 0 24px;
   overflow-x: hidden;
   position: relative;
-  height: 115vh;
+  /* height: 115vh; */
 }
 
 @media screen and (max-width: 1023px) {
   .main {
     height: auto;
-    padding-bottom: 80px;
   }
 }
 

@@ -3,11 +3,10 @@
 
 .principal {
   position: relative;
+  padding: 40px 24px 0 24px;
   height: 100vh;
-  padding: 40px 24px;
 
   @media screen and (max-width: $tablet) {
-    padding-bottom: 140px;
     height: auto;
   }
 }
@@ -16,6 +15,7 @@
   max-width: 500px;
   margin: auto;
   text-align: center;
+  margin-bottom: 40px;
 
   & > button {
     max-width: 240px;
