@@ -3,21 +3,21 @@ import Rating from "@mui/material/Rating";
 import styles from "./AddMidiaModal.module.scss";
 import { useState, Dispatch, SetStateAction } from "react";
 import closeicon from "assets/img/closeicon.svg";
-import { IMidia } from 'types/midia';
+import { IMidia } from "types/midia";
 import { v4 as uuidv4 } from "uuid";
 
 interface Props {
   fecharModal: Dispatch<SetStateAction<boolean>>;
   adicionarMidia: (midia: IMidia) => void;
 }
-export default function Midia({fecharModal, adicionarMidia}:Props) {
+export default function Midia({ fecharModal, adicionarMidia }: Props) {
   const [tipoMidia, setTipoMidia] = useState("Filmes");
   const [nomeMidia, setNomeMidia] = useState("");
   const [anoMidia, setAnoMidia] = useState("");
   const [temporadasMidia, setTemporadasMidia] = useState("");
   const [generoMidia, setGeneroMidia] = useState("");
   const [urlMidia, setUrlMidia] = useState(
-    "https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/91/54/04/20150812.jpg"
+    "https://somos.lojaiplace.com.br/wp-content/uploads/2020/01/cinema-CRED-iStock_Roman-Valiev.jpg"
   );
   const [estrelas, setEstrelas] = useState<number | null>(0);
 
@@ -113,7 +113,23 @@ export default function Midia({fecharModal, adicionarMidia}:Props) {
             type="url"
             placeholder="https://www.exemplo.com/img.jpg"
             className={styles.input}
-            onChange={(e) => setUrlMidia(e.target.value)}
+            onChange={(e) => {
+              const formatosImg = [".jpg", ".png", ".jpeg", ".tiff", ".webp", ".bmp"];
+              let urlInserida = e.target.value;
+              let ehImagem = false;
+
+              for (const formato of formatosImg) {
+                if (urlInserida.endsWith(formato)) {
+                  ehImagem = true;
+                  break
+                }
+              }
+
+              if (ehImagem) {
+                setUrlMidia(e.target.value);
+                return
+              }
+            }}
           />
         </label>
 

@@ -29,7 +29,7 @@ export default function Login() {
           <h1 className={styles.titulo}>Entre com seus dados</h1>
           <Input
             label="E-mail"
-            type="email"
+            type="text"
             onChange={(e) => {
               setEmail(e.target.value);
             }}
