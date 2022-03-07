@@ -15,7 +15,9 @@ export default function Midia({fecharModal, adicionarMidia}:Props) {
   const [anoMidia, setAnoMidia] = useState("");
   const [temporadasMidia, setTemporadasMidia] = useState("");
   const [generoMidia, setGeneroMidia] = useState("");
-  const [urlMidia, setUrlMidia] = useState("");
+  const [urlMidia, setUrlMidia] = useState(
+    "https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/91/54/04/20150812.jpg"
+  );
   const [estrelas, setEstrelas] = useState<number | null>(0);
 
   return (
@@ -106,7 +108,6 @@ export default function Midia({fecharModal, adicionarMidia}:Props) {
         <label className={styles.label}>
           URL da imagem
           <input
-            required
             type="url"
             placeholder="https://www.exemplo.com/img.jpg"
             className={styles.input}
