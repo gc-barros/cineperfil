@@ -1,0 +1,82 @@
+@import 'styles/_variaveis.scss';
+@import 'styles/breakpoints.scss';
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 4;
+}
+
+.container {
+  background-color: $dark-2;
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  height: fit-content;
+  position: relative;
+
+  button {
+    height: 32px;
+    line-height: 0px;
+    font-size: 14px;
+  }
+}
+
+.titulo {
+  margin-bottom: 24px;
+}
+
+.select, .input {
+  display: block;
+  height: 32px;
+  background: $dark-1;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 0 12px;
+  color: $light;
+  font-size: 16px;
+  outline: none;
+  font-weight: 400;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 2px;
+  font-size: 14px;
+}
+
+.input {
+  cursor: auto;
+}
+
+.label {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 22px;
+  color: rgba(255, 255, 255, 0.8);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.botaoClose {
+  position: absolute;
+  right: 8px;
+  top: 16px;
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  cursor: pointer;
+
+  img {
+    height: 20px;
+    width: 20px;
+  }
+}

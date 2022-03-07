@@ -37,6 +37,16 @@ function Categoria({ nome, tipo, excluirCategoria, editarCategoria, id }: Props)
     setShowAddMidiaModal(false);
   }
 
+  function editarMidia(midiaAlvo: IMidia) {
+    setListaMidias((listaAnterior) => listaAnterior.map(midia => {
+      if (midia.id === midiaAlvo.id) {
+        return midiaAlvo;
+      }
+      return midia
+    }));
+    
+  }
+
   function excluirMidia(id: string) {
     setListaMidias(listaAnterior => listaAnterior.filter(midia => midia.id !== id));
   }
@@ -84,7 +94,7 @@ function Categoria({ nome, tipo, excluirCategoria, editarCategoria, id }: Props)
 
         <ul className={styles.listaMidias}>
           {listaMidias.map((midia) => (
-            <Midia midia={midia} excluirMidia={excluirMidia} />
+            <Midia midia={midia} excluirMidia={excluirMidia} editarMidia={editarMidia} key={midia.id} />
           ))}
           <button
             className={styles.botaoNovaMidia}
