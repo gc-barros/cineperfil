@@ -1,0 +1,49 @@
+{
+  "email": "example@email.com",
+  "senha": "123456",
+  "foto": "https://link.com/foto.jpg",
+  "sobre": "amante de filmes",
+  "categorias": [
+    {
+      "nome": "Filmes favoritos",
+      "tipo": "Filmes",
+      "id": "sasa-cadafd-asaef-agg",
+      "midias": [
+        {
+          "nome": "Shrek",
+          "tipo": "Série",
+          "temporadas": "3",
+          "ano": "2008",
+          "genero": "Aventura",
+          "url": "https://link.com/foto.jpg",
+          "avaliacao": 5
+        },
+        {
+          "nome": "Vingadores",
+          "tipo": "Série",
+          "temporadas": "3",
+          "ano": "2008",
+          "genero": "Aventura",
+          "url": "https://link.com/foto.jpg",
+          "avaliacao": 5
+        }
+      ]
+    },
+    {
+      "nome": "Séries favoritas",
+      "tipo": "Séries",
+      "id": "sasa-cafafafd-asaef-agg",
+      "midias": [
+        {
+          "nome": "Breaking Bad",
+          "tipo": "Série",
+          "temporadas": "3",
+          "ano": "2008",
+          "genero": "Aventura",
+          "url": "https://link.com/foto.jpg",
+          "avaliacao": 5
+        }
+      ]
+    }
+  ]
+}

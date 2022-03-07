@@ -1,0 +1,112 @@
+@import 'styles/_variaveis.scss';
+@import 'styles/breakpoints.scss';
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 4;
+}
+
+.container {
+  background-color: $dark-2;
+  padding: 24px 40px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  height: fit-content;
+  position: relative;
+  
+  img {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: .3s ease;
+    object-fit: cover;
+    
+    &:hover {
+      border-color: $accent;
+    }
+  }
+}
+
+.content {
+  display: flex;
+  gap: 24px;
+  margin-top: 16px;
+  align-items: flex-end;
+
+  @media screen and (max-width: $mobile) {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 40px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  h3 {
+    color: $light;
+    font-size: 24px;
+  }
+}
+
+.informacoes {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  strong {
+    color: $accent-light;
+    font-weight: 800;
+  }
+}
+
+.botoes {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+
+  button {
+    font-size: 16px;
+    height: 38px;
+    line-height: 0;
+  }
+}
+
+.botaoClose {
+  position: absolute;
+  right: 8px;
+  top: 16px;
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 12px;
+  cursor: pointer;
+
+  img {
+    height: 20px;
+    width: 20px;
+
+    &:hover {
+      border: transparent;
+    }
+  }
+}
