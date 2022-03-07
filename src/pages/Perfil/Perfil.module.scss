@@ -1,0 +1,71 @@
+@import "styles/variaveis.scss";
+@import "styles/breakpoints.scss";
+
+.editarDados {
+  max-width: 360px;
+  margin: 80px auto 32px auto;
+
+  h3 {
+    font-size: 24px;
+    margin-bottom: 24px;
+    color: $accent;
+  }
+}
+
+.backArrow {
+  svg {
+    margin-right: 16px;
+  }
+  
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding-left: 32px;
+  transform: translateY(40px);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.gerenciarSenha {
+  max-width: 360px;
+  margin: 0 auto 80px auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  span {
+    display: flex;
+    text-align: center;
+    align-items: center;
+
+    p {
+      margin: 0 16px;
+    }
+
+    hr {
+      width: 100%;
+    }
+    
+  }
+}
+
+.botoes {
+  display: flex;
+  margin-top: 32px;
+  gap: 8px;
+  
+  @media screen and (max-width: $mobile) {
+    flex-wrap: wrap;
+  }
+
+  & > button {
+    color: $accent-light;
+    border-color: $accent-light;
+    font-size: 16px;
+
+    &:hover {
+      color: $light;
+      border-color: $light;
+    }
+  }
+}

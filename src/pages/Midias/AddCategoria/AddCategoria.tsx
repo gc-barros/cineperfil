@@ -23,6 +23,7 @@ export default function AddCategoria({ criarNovaCategoria }: Props) {
   return (
     <div className={styles.adicionar}>
       <Input
+        placeholder="Filmes favoritos"
         label="Adicionar nova categoria"
         onChange={(e) => setNovaCategoriaNome(e.target.value)}
         onKeyPress={(e) => {

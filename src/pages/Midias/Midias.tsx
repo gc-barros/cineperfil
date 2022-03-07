@@ -76,6 +76,7 @@ export default function Midias() {
           <div className={styles.buscar}>
             <Input
               label="Buscar categoria"
+              placeholder="Melhores animes"
               onChange={(e) => setBusca(e.target.value)}
             />
           </div>

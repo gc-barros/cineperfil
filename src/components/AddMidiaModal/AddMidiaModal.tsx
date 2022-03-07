@@ -108,7 +108,7 @@ export default function Midia({fecharModal, adicionarMidia}:Props) {
         </label>
 
         <label className={styles.label}>
-          URL da imagem
+          URL da imagem (png, jpg...)
           <input
             type="url"
             placeholder="https://www.exemplo.com/img.jpg"
