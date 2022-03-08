@@ -13,7 +13,7 @@
 ___
 
 ### ⚡ Funcionalidades:
-- [x] Design personalizado para as telas home, login, cadastro, mídias, perfil e 404.
+- [x] [Design personalizado](https://www.figma.com/file/HaV0NHg9rl6V63ejYBfEic/Cineperfil?node-id=0%3A1) para as telas home, login, cadastro, mídias, perfil e 404.
 - [x] Criar, visualizar, editar, excluir e buscar categorias.
 - [x] Criar, visualizar, editar e excluir mídias (filmes, séries ou animes) em cada categoria.
 - [x] Salvar dados no localStorage.
