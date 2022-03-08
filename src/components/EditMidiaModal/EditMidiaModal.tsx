@@ -165,7 +165,7 @@ export default function EditMidiaModal({ fecharModal, editarMidia, midiaAlvo, re
           </div>
         </label>
 
-        <Botao>Adicionar</Botao>
+        <Botao>Salvar alterações</Botao>
       </form>
     </div>
   );
