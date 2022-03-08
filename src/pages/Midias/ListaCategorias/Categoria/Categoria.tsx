@@ -28,7 +28,7 @@ function Categoria({ nome, tipo, excluirCategoria, editarCategoria, id }: Props)
 
   useEffect(()=>{
     saveItem(`@cineperfil/${id}`, listaMidias);
-  },[listaMidias])
+  },[listaMidias, id])
 
   function handleShowOptions() {
     setShowOption(!showOptions);
