@@ -29,6 +29,7 @@ ___
 * [TypeScript](https://www.typescriptlang.org)
 * [React.js](https://reactjs.org/docs/getting-started.html)
 * [Sass](https://sass-lang.com/)
+* [Figma](https://figma.com/)
 
 ### 🚀 Instalação:
 Instalar dependências:
