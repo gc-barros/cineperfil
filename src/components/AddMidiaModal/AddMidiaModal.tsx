@@ -9,8 +9,9 @@ import { v4 as uuidv4 } from "uuid";
 interface Props {
   fecharModal: Dispatch<SetStateAction<boolean>>;
   adicionarMidia: (midia: IMidia) => void;
+  refCategoria: string;
 }
-export default function Midia({ fecharModal, adicionarMidia }: Props) {
+export default function Midia({ fecharModal, adicionarMidia, refCategoria }: Props) {
   const [tipoMidia, setTipoMidia] = useState("Filmes");
   const [nomeMidia, setNomeMidia] = useState("");
   const [anoMidia, setAnoMidia] = useState("");
@@ -36,6 +37,7 @@ export default function Midia({ fecharModal, adicionarMidia }: Props) {
             genero: generoMidia,
             url: urlMidia,
             avaliacao: estrelas,
+            refCategoria: refCategoria
           });
         }}
       >

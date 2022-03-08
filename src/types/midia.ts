@@ -7,4 +7,5 @@ export interface IMidia {
   genero: string;
   url: string;
   avaliacao: number | null;
+  refCategoria: string;
 }

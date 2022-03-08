@@ -3,11 +3,12 @@ import { ReactComponent as OptionsIcon } from "assets/img/options.svg";
 import { ReactComponent as NovaMidiaIcon } from "assets/img/novamidia.svg";
 import { ReactComponent as EditIcon } from "assets/img/editicon.svg";
 import { ReactComponent as TrashIcon } from "assets/img/trashicon.svg";
-import { memo, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import EditarCategoria from "pages/Midias/EditarCategoria";
 import Midia from "components/Midia";
 import AddMidiaModal from "components/AddMidiaModal";
 import { IMidia } from 'types/midia';
+import { getSavedItems, saveItem } from 'services/storeCategorias';
 
 interface Props {
   nome: string;
@@ -18,11 +19,16 @@ interface Props {
 }
 
 function Categoria({ nome, tipo, excluirCategoria, editarCategoria, id }: Props) {
+  const storage = getSavedItems(`@cineperfil/${id}`);
   const [showOptions, setShowOption] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
   const [showAddMidiaModal, setShowAddMidiaModal] = useState(false);
 
-  const [listaMidias, setListaMidias] = useState<IMidia[]>([]);
+  const [listaMidias, setListaMidias] = useState<IMidia[]>(storage || []);
+
+  useEffect(()=>{
+    saveItem(`@cineperfil/${id}`, listaMidias);
+  },[listaMidias])
 
   function handleShowOptions() {
     setShowOption(!showOptions);
@@ -94,7 +100,13 @@ function Categoria({ nome, tipo, excluirCategoria, editarCategoria, id }: Props)
 
         <ul className={styles.listaMidias}>
           {listaMidias.map((midia) => (
-            <Midia midia={midia} excluirMidia={excluirMidia} editarMidia={editarMidia} key={midia.id} />
+            <Midia
+              midia={midia}
+              excluirMidia={excluirMidia}
+              editarMidia={editarMidia}
+              key={midia.id}
+              refCategoria={id}
+            />
           ))}
           <button
             className={styles.botaoNovaMidia}
@@ -110,6 +122,7 @@ function Categoria({ nome, tipo, excluirCategoria, editarCategoria, id }: Props)
         <AddMidiaModal
           fecharModal={setShowAddMidiaModal}
           adicionarMidia={adicionarMidia}
+          refCategoria={id}
         />
       )}
     </>

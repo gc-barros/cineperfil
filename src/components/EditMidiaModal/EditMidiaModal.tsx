@@ -9,8 +9,9 @@ interface Props {
   midiaAlvo: IMidia;
   fecharModal: Dispatch<SetStateAction<boolean>>;
   editarMidia: (midiaAlvo: IMidia) => void;
+  refCategoria: string;
 }
-export default function EditMidiaModal({ fecharModal, editarMidia, midiaAlvo }: Props) {
+export default function EditMidiaModal({ fecharModal, editarMidia, midiaAlvo, refCategoria }: Props) {
   const [tipoMidia, setTipoMidia] = useState(midiaAlvo.tipo);
   const [nomeMidia, setNomeMidia] = useState(midiaAlvo.nome);
   const [anoMidia, setAnoMidia] = useState(midiaAlvo.ano);
@@ -36,6 +37,7 @@ export default function EditMidiaModal({ fecharModal, editarMidia, midiaAlvo }: 
             genero: generoMidia,
             url: urlMidia,
             avaliacao: estrelas,
+            refCategoria: refCategoria,
           });
           fecharModal(false);
         }}

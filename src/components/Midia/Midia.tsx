@@ -7,9 +7,10 @@ interface Props {
   midia: IMidia;
   excluirMidia: (id: string) => void;
   editarMidia: (midiaAlvo: IMidia) => void;
+  refCategoria: string;
 }
 
-export default function Midia({ midia, excluirMidia, editarMidia }: Props) {
+export default function Midia({ midia, excluirMidia, editarMidia, refCategoria }: Props) {
   const [showVisualizarMidia, setShowVisualizarMidia] = useState(false);
   return (
     <>
@@ -30,6 +31,7 @@ export default function Midia({ midia, excluirMidia, editarMidia }: Props) {
           setShowVisualizarMidia={setShowVisualizarMidia}
           excluirMidia={excluirMidia}
           editarMidia={editarMidia}
+          refCategoria={refCategoria}
         />
       )}
     </>

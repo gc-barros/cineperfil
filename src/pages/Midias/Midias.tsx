@@ -8,11 +8,21 @@ import styles from "./Midias.module.scss";
 import { ICategoria } from "types/categoria";
 import { v4 as uuidv4 } from "uuid";
 import Rodape from "components/Rodape";
+import {
+  getSavedItems,
+  saveItem,
+} from "services/storeCategorias";
 
 export default function Midias() {
-  const [listaDeCategorias, setListaDeCategorias] = useState<ICategoria[]>([]);
+  const storage = getSavedItems("@cineperfil/categorias");
+  const [listaDeCategorias, setListaDeCategorias] = useState<ICategoria[]>(storage || []);
   const [busca, setBusca] = useState("");
   const [listaFiltrada, setListaFiltrada] = useState(listaDeCategorias);
+
+  useEffect(() => {
+    saveItem("@cineperfil/categorias", listaDeCategorias);
+    
+  }, [listaDeCategorias])
 
   function criarNovaCategoria(nome: string, tipo: string) {
     const novaCategoria = {
@@ -31,13 +41,23 @@ export default function Midias() {
       return;
     }
 
-    setListaDeCategorias((listaAnterior) => [...listaAnterior, novaCategoria]);
+    setListaDeCategorias((listaAnterior) => [...listaAnterior, novaCategoria]); 
   }
 
   function excluirCategoria(nome: string) {
+    const alvo = listaDeCategorias.find(categoria => categoria.nome === nome);
+
     setListaDeCategorias((listaAnterior) =>
       listaAnterior.filter((categoria) => categoria.nome !== nome)
     );
+
+    if (alvo) {
+      localStorage.removeItem(`@cineperfil/${alvo.id}`);
+    }
+
+    if (listaDeCategorias.length === 1) {
+      localStorage.removeItem(`@cineperfil/categorias`);
+    }
   }
 
   function editarCategoria(nome: string, tipo: string, id: string) {

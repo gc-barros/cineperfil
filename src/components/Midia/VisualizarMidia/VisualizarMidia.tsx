@@ -11,19 +11,21 @@ interface Props {
   setShowVisualizarMidia: React.Dispatch<React.SetStateAction<boolean>>;
   excluirMidia: (id: string) => void;
   editarMidia: (midiaAlvo: IMidia) => void;
+  refCategoria: string;
 }
 
 export default function VisualizarMidia({
   midia,
   setShowVisualizarMidia,
   excluirMidia,
-  editarMidia
+  editarMidia,
+  refCategoria
 }: Props) {
   const [showEditModal, setShowEditModal] = useState(false);
   
   return (
     <div className={styles.overlay}>
-      {showEditModal && <EditMidiaModal midiaAlvo={midia} fecharModal={()=>{setShowEditModal(false)}} editarMidia={editarMidia} />}
+      {showEditModal && <EditMidiaModal midiaAlvo={midia} fecharModal={()=>{setShowEditModal(false)}} refCategoria={refCategoria} editarMidia={editarMidia} />}
       <div className={styles.container}>
         <div className={styles.header}>
           <h3>{midia.nome}</h3>

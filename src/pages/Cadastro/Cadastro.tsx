@@ -4,7 +4,7 @@ import Rodape from "components/Rodape";
 import Botao from "components/Botao";
 import Input from "components/Input";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Cadastro() {
   const [nome, setNome] = useState("");
@@ -12,6 +12,7 @@ export default function Cadastro() {
   const [senha, setSenha] = useState("");
   const [senhaConfirmacao, setSenhaConfirmacao] = useState("");
 
+  const navigate = useNavigate();
   return (
     <main className={styles.principal}>
       <CabecalhoInicial />
@@ -61,7 +62,7 @@ export default function Cadastro() {
             }}
             placeholder="•••••••••••"
           />
-          <Botao>Criar conta</Botao>
+          <Botao onClick={() => navigate('/midias')}>Criar conta</Botao>
           <span className={styles.criarConta}>
             Já possui uma conta? <Link to="/login">Faça login</Link>
           </span>
