@@ -70,7 +70,10 @@
   justify-content: center;
   align-items: center;
   transition: .3s ease;
-  margin: auto;
+  
+  @media screen and (max-width: $mobile) {
+    margin: auto;
+  }
   
   svg path {
     transition: .3s ease;
@@ -103,7 +106,7 @@
   width: 100%;
   padding-bottom: 16px;
 
-  @media screen and (max-width: $tablet) {
+  @media screen and (max-width: $mobile) {
     justify-content: flex-start;
   }
 }

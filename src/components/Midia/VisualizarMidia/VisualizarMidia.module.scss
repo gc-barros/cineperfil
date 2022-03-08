@@ -23,7 +23,7 @@
   position: relative;
 
   @media screen and (max-width: $mobile) {
-    padding: 24px;
+    padding: 24px 40px;
   }
   
   img {
@@ -54,7 +54,8 @@
     margin-top: 40px;
 
     img {
-      width: 50%;
+      max-width: 200px;
+      width: 80%;
       display: block;
       margin: auto;
       height: auto;

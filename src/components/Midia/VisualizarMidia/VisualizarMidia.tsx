@@ -38,7 +38,7 @@ export default function VisualizarMidia({
           </button>
         </div>
         <div className={styles.content}>
-          <div>
+          <div className={styles.imagemContainer}>
             <img src={midia.url} alt={midia.nome} />
           </div>
           <div className={styles.informacoes}>
