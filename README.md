@@ -4,7 +4,7 @@
 
 #### 🔗 Confira em: https://cineperfil.vercel.app/
 
-<a href="https://cineperfil.vercel.app/"><img alt="Cineperfil" src="cineperfil.gif"></a>
+<a href="https://cineperfil.vercel.app/"><img alt="Cineperfil" src="https://github.com/gc-barros/cineperfil/blob/master/src/assets/img/cineperfil.jpg" width="800"></a>
 
 - 🐱‍💻 Front-end em React, desenvolvido para obtenção de nota na disciplina de Desenvolvimento de Sistemas Web (BICT/UFMA).
 
