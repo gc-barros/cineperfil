@@ -122,7 +122,7 @@ export default function EditMidiaModal({ fecharModal, editarMidia, midiaAlvo, re
             placeholder="https://www.exemplo.com/img.jpg"
             className={styles.input}
             value={urlMidia}
-            onChange={(e) => {
+            onBlur={() => {
               const formatosImg = [
                 ".jpg",
                 ".png",
@@ -131,7 +131,8 @@ export default function EditMidiaModal({ fecharModal, editarMidia, midiaAlvo, re
                 ".webp",
                 ".bmp",
               ];
-              let urlInserida = e.target.value;
+
+              let urlInserida = urlMidia;
               let ehImagem = false;
 
               for (const formato of formatosImg) {
@@ -141,10 +142,16 @@ export default function EditMidiaModal({ fecharModal, editarMidia, midiaAlvo, re
                 }
               }
 
-              if (ehImagem) {
-                setUrlMidia(e.target.value);
+              if (!ehImagem) {
+                setUrlMidia(
+                  "https://somos.lojaiplace.com.br/wp-content/uploads/2020/01/cinema-CRED-iStock_Roman-Valiev.jpg"
+                );
+
                 return;
               }
+            }}
+            onChange={(e) => {
+              setUrlMidia(e.target.value);
             }}
           />
         </label>
